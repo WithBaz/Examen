@@ -16,12 +16,15 @@ public class FacturaController {
 
     private final FacturacionService facturaService;
 
+    // Endpoint para crear una factura
     @PostMapping("/crear/{tiendaId}")
     public ResponseEntity<?> crearFactura(@PathVariable String tiendaId, @RequestBody FacturaDTO facturaDTO) {
         Response<?> resultado = facturaService.procesarFactura(tiendaId, facturaDTO);
         return ResponseEntity.ok(resultado);
     }
-    @PostMapping("/{tiendaId}")
+
+    // Endpoint para consultar una factura
+    @PostMapping("/consultar/{tiendaId}")
     public ResponseEntity<Response<FacturaDTO.ResponseData>> consultarFactura(
             @PathVariable String tiendaId, 
             @RequestBody FacturaDTO consultaDTO) {
@@ -36,5 +39,5 @@ public class FacturaController {
             return ResponseEntity.status(404).body(response); // Retorna código 404 si hay error
         }
     }
-    
 }
+ 
