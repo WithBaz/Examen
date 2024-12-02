@@ -34,7 +34,7 @@ public class Pago {
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tipo_pago_id", nullable = false)
-    private Tipo_Pago tipoPago;
+    private Tipo_Pago tipo_Pago;
     
     @Column(name = "tarjeta_tipo")
     private String tarjetaTipo;
@@ -43,4 +43,7 @@ public class Pago {
     
     @Column(nullable = false)
     private Double valor;
+ 
+
+
 }

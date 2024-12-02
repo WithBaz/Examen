@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.entity.Tienda;
 
 @Repository
-public interface TiendaRepository extends JpaRepository<Tienda, Long> {
-    Tienda findByNit(String nit);
+public interface TiendaRepository extends JpaRepository<Tienda, String> {
+
 }

@@ -36,6 +36,10 @@ public class Compra {
     @JsonIgnore
     private Cliente cliente;
     
+    @ManyToOne
+    @JoinColumn(name = "tienda_id")
+    private Tienda tienda;
+    
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "vendedor_id", nullable = false)
     @JsonIgnore
@@ -59,4 +63,5 @@ public class Compra {
     
     @OneToMany(mappedBy = "compra", cascade = CascadeType.ALL)
     private List<Detalles_Compra> detallesCompra;
+
 }

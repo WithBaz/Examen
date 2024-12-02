@@ -38,6 +38,8 @@ public class Producto {
     
     @Column(nullable = false)
     private Integer cantidad;
+    @Column(name = "referencia")
+    private String referencia;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tipo_producto_id", nullable = false)

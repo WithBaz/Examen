@@ -35,4 +35,5 @@ public class Cliente {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tipo_documento_id", nullable = false)
     private Tipo_Documento tipoDocumento;
+
 }
