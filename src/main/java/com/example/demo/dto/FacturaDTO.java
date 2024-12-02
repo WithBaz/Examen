@@ -1,14 +1,13 @@
 package com.example.demo.dto;
 
 import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
 public class FacturaDTO {
-    
+
     private String clienteDocumento;
     private String clienteNombre;
     private String clienteTipoDocumento;
@@ -17,6 +16,7 @@ public class FacturaDTO {
     private double impuesto;
     private List<ProductoFactura> productos;
     private List<MedioPago> mediosPago;
+    private Long numero;  // Agregamos el campo numero de factura
 
     @Data
     @AllArgsConstructor
