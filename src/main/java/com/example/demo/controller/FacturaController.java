@@ -3,6 +3,7 @@ package com.example.demo.controller;
 
 
 import com.example.demo.dto.FacturaDTO;
+import com.example.demo.dto.Response;
 import com.example.demo.service.FacturacionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +17,8 @@ public class FacturaController {
     private final FacturacionService facturaService;
 
     @PostMapping("/crear/{tiendaId}")
-    public ResponseEntity<String> crearFactura(@PathVariable String tiendaId, @RequestBody FacturaDTO facturaDTO) {
-        String resultado = facturaService.procesarFactura(tiendaId, facturaDTO);
+    public ResponseEntity<?> crearFactura(@PathVariable String tiendaId, @RequestBody FacturaDTO facturaDTO) {
+        Response<?> resultado = facturaService.procesarFactura(tiendaId, facturaDTO);
         return ResponseEntity.ok(resultado);
     }
 }

@@ -1,32 +1,44 @@
 package com.example.demo.dto;
 
-
-import lombok.Data;
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 @Data
+@AllArgsConstructor
 public class FacturaDTO {
-    private Double impuesto;
+    
     private String clienteDocumento;
     private String clienteNombre;
     private String clienteTipoDocumento;
-    private List<ProductoFactura> productos;
-    private List<MedioPago> mediosPago;
     private String vendedorDocumento;
     private String cajeroToken;
+    private double impuesto;
+    private List<ProductoFactura> productos;
+    private List<MedioPago> mediosPago;
 
     @Data
+    @AllArgsConstructor
     public static class ProductoFactura {
         private String referencia;
-        private Integer cantidad;
-        private Double descuento;
+        private int cantidad;
+        private double descuento;
     }
 
     @Data
+    @AllArgsConstructor
     public static class MedioPago {
-        private String tipoPago;
+        private double valor;
+        private int cuotas;
         private String tipoTarjeta;
-        private Integer cuotas;
-        private Double valor;
+    }
+
+    @Data
+    @AllArgsConstructor
+    public static class ResponseData {
+        private Long numero;
+        private double total;
+        private String fecha;
     }
 }
