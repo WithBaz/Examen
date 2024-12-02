@@ -26,4 +26,5 @@ public class Tipo_Pago {
     
     @Column(nullable = false)
     private String nombre;
+
 }
